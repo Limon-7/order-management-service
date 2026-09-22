@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "SagaWorker": {
+      "commandName": "Project",
+      "environmentVariables": { "ASPNETCORE_ENVIRONMENT": "Development" }
+    },
+    "SagaWorker-DockerLocal": {
+      "commandName": "Project",
+      "environmentVariables": { "ASPNETCORE_ENVIRONMENT": "DockerLocal" }
+    }
+  }
+}

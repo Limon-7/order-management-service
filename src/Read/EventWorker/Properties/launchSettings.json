@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "EventWorker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "EventWorker-DockerLocal": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "DockerLocal"
+      }
+    }
+  }
+}

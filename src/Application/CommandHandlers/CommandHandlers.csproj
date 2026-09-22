@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Bits.OrderManagement.Application.CommandHandlers</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Application.CommandHandlers</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Platform.Infrastructure.Core" />
+    <PackageReference Include="TimeZoneConverter" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Common\Common.csproj" />
+    <ProjectReference Include="..\..\Domain\Aggregates\Aggregates.csproj" />
+    <ProjectReference Include="..\..\Domain\Events\Events.csproj" />
+    <ProjectReference Include="..\..\Domain\Models\Models.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\CommandServices\CommandServices.csproj" />
+    <ProjectReference Include="..\Commands\Commands.csproj" />
+    <ProjectReference Include="..\DataMappers\DataMappers.csproj" />
+  </ItemGroup>
+
+</Project>

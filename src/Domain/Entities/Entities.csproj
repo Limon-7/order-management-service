@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Bits.OrderManagement.Domain.Entities</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Domain.Entities</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Platform.Infrastructure.Core" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Common\Common.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\ValueObjects\ValueObjects.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "CommandWorker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "CommandWorker-DockerLocal": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "DockerLocal"
+      }
+    }
+  }
+}

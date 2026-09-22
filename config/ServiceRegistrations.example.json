@@ -1,0 +1,29 @@
+{
+  "Services": [
+    {
+      "ServiceId": "order-management",
+      "ServiceName": "Order Management Service",
+      "Databases": {
+        "WriteDb": {
+          "ConnectionString": "mongodb://localhost:27017",
+          "DatabaseName": "order-management_write_db"
+        },
+        "ReadDb": {
+          "ConnectionString": "mongodb://localhost:27017",
+          "DatabaseName": "order-management_read_db"
+        },
+        "StateDb": {
+          "ConnectionString": "mongodb://localhost:27017",
+          "DatabaseName": "order-management_saga_state_db"
+        },
+        "CacheDb": {
+          "ConnectionString": "localhost:6379",
+          "InstanceName": "order-management_cache"
+        }
+      },
+      "BusConfig": {
+        "ConnectionString": "amqp://guest:guest@localhost:5672/"
+      }
+    }
+  ]
+}

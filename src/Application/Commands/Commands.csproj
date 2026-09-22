@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Bits.OrderManagement.Application.Commands</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Application.Commands</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Platform.Infrastructure.Core" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Common\Common.csproj" />
+    <ProjectReference Include="..\..\Domain\Models\Models.csproj" />
+  </ItemGroup>
+
+</Project>

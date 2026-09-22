@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config.json",
+  "mcpServers": {
+    "mongodb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-mongodb",
+        "mongodb://localhost:27017/{{DatabaseName}}_dev"
+      ],
+      "env": {
+        "MONGODB_READ_ONLY": "true"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>"
+      }
+    },
+    "gitlab": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-gitlab"
+      ],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITLAB_PERSONAL_ACCESS_TOKEN>",
+        "GITLAB_API_URL": "https://gitlab.bracits.com"
+      }
+    },
+    "jira": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-atlassian"
+      ],
+      "env": {
+        "JIRA_URL": "https://tim.brac.net",
+        "JIRA_PERSONAL_ACCESS_TOKEN": "<YOUR_BRAC_TIM_PERSONAL_ACCESS_TOKEN>",
+        "JIRA_EMAIL": "your.name@brac.net"
+      }
+    }
+  }
+}
+

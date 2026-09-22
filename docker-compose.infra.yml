@@ -1,0 +1,35 @@
+# Local Infrastructure for Event-Driven Development & Integration Testing
+# Start command: docker compose -f docker-compose.infra.yml up -d
+# Stop command:  docker compose -f docker-compose.infra.yml down
+
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: local-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - local_mongodb_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: local-rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"      # AMQP protocol for MassTransit
+      - "15672:15672"    # Web Management UI: http://localhost:15672 (user: guest / pass: guest)
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - local_rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  local_mongodb_data:
+    name: local_mongodb_data
+  local_rabbitmq_data:
+    name: local_rabbitmq_data
+

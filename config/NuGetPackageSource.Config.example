@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageRestore>
+    <add key="enabled" value="True" />
+    <add key="automatic" value="True" />
+  </packageRestore>
+  <packageSources>
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+    <add key="BracIts" value="https://gitlab.bracits.com/api/v4/groups/1488/-/packages/nuget/index.json" />
+  </packageSources>
+  <disabledPackageSources />
+  <packageSourceCredentials>
+    <BracIts>
+      <add key="Username" value="modernization-deploy-token"/>
+      <add key="ClearTextPassword" value="<YOUR_GITLAB_DEPLOY_TOKEN>" />
+    </BracIts>
+  </packageSourceCredentials>
+</configuration>

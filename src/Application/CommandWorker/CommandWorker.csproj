@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Bits.OrderManagement.Application.CommandWorker</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Application.CommandWorker</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Platform.Infrastructure.Core" />
+    <PackageReference Include="Platform.Infrastructure.Host.Worker" />
+    <PackageReference Include="Platform.Infrastructure.MassTransit.Bus.RabbitMQ" />
+    <PackageReference Include="Platform.Infrastructure.Repository.MongoDb" />
+    <PackageReference Include="Scrutor" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
+
+    <!-- Optional: uncomment if this service uses Redis caching -->
+    <!-- <PackageReference Include="Platform.Infrastructure.RedisCache" /> -->
+
+    <!-- Optional: uncomment if this worker uses Quartz.NET job scheduling -->
+    <!-- <PackageReference Include="Quartz" /> -->
+    <!-- <PackageReference Include="Quartz.Extensions.DependencyInjection" /> -->
+    <!-- <PackageReference Include="Quartz.Extensions.Hosting" /> -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\CommandHandlers\CommandHandlers.csproj" />
+    <ProjectReference Include="..\CommandServices\CommandServices.csproj" />
+    <ProjectReference Include="..\..\Read\ViewModels\ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">          <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.Development.json"><CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.DockerLocal.json"><CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.dev.json">      <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.qa.json">       <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.stg.json">      <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.prod.json">     <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

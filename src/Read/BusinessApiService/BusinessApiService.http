@@ -1,0 +1,5 @@
+﻿# REST Client file for VS HTTP client
+@baseUrl = http://localhost:5010
+
+### Health check
+GET {{baseUrl}}/health

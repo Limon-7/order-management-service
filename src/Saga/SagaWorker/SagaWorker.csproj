@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Bits.OrderManagement.Saga.SagaWorker</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Saga.SagaWorker</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" />
+    <PackageReference Include="MassTransit.MongoDb" />
+    <PackageReference Include="MassTransit.RabbitMQ" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
+    <PackageReference Include="Platform.Infrastructure.Core" />
+    <PackageReference Include="Platform.Infrastructure.MassTransit.Bus.RabbitMQ" />
+    <PackageReference Include="Platform.Infrastructure.RedisCache" />
+    <PackageReference Include="Platform.Infrastructure.Repository.MongoDb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Common\Common.csproj" />
+    <ProjectReference Include="..\SagaService\SagaService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">           <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.Development.json"><CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.DockerLocal.json"><CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.dev.json">       <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.qa.json">        <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.stg.json">       <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.prod.json">      <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,57 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ── Platform.Infrastructure ──────────────────────────────────────── -->
+    <PackageVersion Include="Platform.Infrastructure.Core"                        Version="1.0.31" />
+    <PackageVersion Include="Platform.Infrastructure.Authentication"              Version="1.0.18" />
+    <PackageVersion Include="Platform.Infrastructure.Host.WebApi"                 Version="1.0.13" />
+    <PackageVersion Include="Platform.Infrastructure.Host.Worker"                 Version="1.0.10" />
+    <PackageVersion Include="Platform.Infrastructure.MassTransit.Bus.RabbitMQ"    Version="1.0.12" />
+    <PackageVersion Include="Platform.Infrastructure.Repository.MongoDb"          Version="1.0.14" />
+    <PackageVersion Include="Platform.Infrastructure.RedisCache"                  Version="1.0.4"  />
+    <PackageVersion Include="Platform.Infrastructure.CustomException"             Version="1.0.1"  />
+    <PackageVersion Include="Platform.Infrastructure.FaultTolerance.Http"         Version="1.0.1"  />
+    <PackageVersion Include="Platform.Infrastructure.CacheStore"                  Version="1.0.3"  />
+
+    <!-- ── Microsoft.Extensions ────────────────────────────────────────── -->
+    <PackageVersion Include="Microsoft.Extensions.Hosting"                        Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection"            Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Memory"                 Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions"           Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions"           Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options.DataAnnotations"        Version="10.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson"             Version="10.0.0" />
+    <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+
+    <!-- ── MongoDB ──────────────────────────────────────────────────────── -->
+    <PackageVersion Include="MongoDB.Bson"                                        Version="2.23.1" />
+    <PackageVersion Include="MongoDB.Driver"                                      Version="2.23.1" />
+
+    <!-- ── MassTransit ─────────────────────────────────────────────────── -->
+    <PackageVersion Include="MassTransit"                                         Version="8.3.0"  />
+    <PackageVersion Include="MassTransit.MongoDb"                                 Version="8.3.0"  />
+    <PackageVersion Include="MassTransit.RabbitMQ"                                Version="8.3.0"  />
+
+    <!-- ── Quartz (optional — remove if not using scheduler) ───────────── -->
+    <PackageVersion Include="Quartz"                                              Version="3.13.0" />
+    <PackageVersion Include="Quartz.Extensions.DependencyInjection"               Version="3.13.0" />
+    <PackageVersion Include="Quartz.Extensions.Hosting"                           Version="3.13.0" />
+
+    <!-- ── Other ────────────────────────────────────────────────────────── -->
+    <PackageVersion Include="Scrutor"                                             Version="6.1.0"  />
+    <PackageVersion Include="Swashbuckle.AspNetCore"                              Version="9.0.6"  />
+    <PackageVersion Include="TimeZoneConverter"                                   Version="7.2.0"  />
+
+    <!-- ── Test ─────────────────────────────────────────────────────────── -->
+    <PackageVersion Include="coverlet.collector"                                  Version="6.0.2"  />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk"                              Version="17.12.0"/>
+    <PackageVersion Include="Moq"                                                 Version="4.20.70"/>
+    <PackageVersion Include="FluentAssertions"                                    Version="6.12.0" />
+    <PackageVersion Include="xunit"                                               Version="2.9.2"  />
+    <PackageVersion Include="xunit.runner.visualstudio"                           Version="2.8.2"  />
+  </ItemGroup>
+
+</Project>

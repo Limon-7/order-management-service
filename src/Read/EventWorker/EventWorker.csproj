@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Bits.OrderManagement.Read.EventWorker</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Read.EventWorker</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" />
+    <PackageReference Include="Platform.Infrastructure.Core" />
+    <PackageReference Include="Platform.Infrastructure.MassTransit.Bus.RabbitMQ" />
+    <PackageReference Include="Platform.Infrastructure.Repository.MongoDb" />
+    <PackageReference Include="Scrutor" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventHandlers\EventHandlers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">           <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.Development.json"><CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.DockerLocal.json"><CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.dev.json">       <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.qa.json">        <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.stg.json">       <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+    <None Update="appsettings.prod.json">      <CopyToOutputDirectory>Always</CopyToOutputDirectory></None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

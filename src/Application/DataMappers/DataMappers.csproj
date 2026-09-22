@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Bits.OrderManagement.Application.DataMappers</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Application.DataMappers</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Platform.Infrastructure.Core" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Common\Common.csproj" />
+    <ProjectReference Include="..\..\Domain\Aggregates\Aggregates.csproj" />
+    <ProjectReference Include="..\..\Domain\Events\Events.csproj" />
+    <ProjectReference Include="..\..\Domain\Models\Models.csproj" />
+    <ProjectReference Include="..\Commands\Commands.csproj" />
+  </ItemGroup>
+
+</Project>

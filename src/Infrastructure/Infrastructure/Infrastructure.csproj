@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Bits.OrderManagement.Infrastructure</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Platform.Infrastructure.Repository.MongoDb" />
+  </ItemGroup>
+
+</Project>

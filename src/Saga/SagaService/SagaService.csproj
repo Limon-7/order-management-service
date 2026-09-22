@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Bits.OrderManagement.Saga.SagaService</AssemblyName>
+    <RootNamespace>Bits.OrderManagement.Saga.SagaService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" />
+    <PackageReference Include="MassTransit.MongoDb" />
+    <PackageReference Include="MassTransit.RabbitMQ" />
+    <PackageReference Include="Platform.Infrastructure.Core" />
+    <PackageReference Include="Platform.Infrastructure.Repository.MongoDb" />
+    <PackageReference Include="Platform.Infrastructure.FaultTolerance.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Common\Common.csproj" />
+    <ProjectReference Include="..\..\Domain\Events\Events.csproj" />
+  </ItemGroup>
+
+</Project>

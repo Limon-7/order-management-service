@@ -1,0 +1,69 @@
+# Application Micro-Hosts Docker Compose
+# Usage:
+#   docker compose up --build -d
+#   docker compose down
+#
+# Note: Ensure local infrastructure (MongoDB + RabbitMQ) is running first:
+#   docker compose -f docker-compose.infra.yml up -d
+
+version: "3.8"
+
+services:
+
+  order-management-command-worker:
+    build:
+      context: .
+      dockerfile: src/Application/CommandWorker/Dockerfile
+    image: order-management/command-worker:latest
+    container_name: order-management-command-worker
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerLocal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "${SERVICE_REGISTRATIONS_PATH:-./config/ServiceRegistrations.example.json}:/app/Settings/ServiceRegistrations/ServiceRegistrations.json:ro"
+
+  order-management-event-worker:
+    build:
+      context: .
+      dockerfile: src/Read/EventWorker/Dockerfile
+    image: order-management/event-worker:latest
+    container_name: order-management-event-worker
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerLocal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "${SERVICE_REGISTRATIONS_PATH:-./config/ServiceRegistrations.example.json}:/app/Settings/ServiceRegistrations/ServiceRegistrations.json:ro"
+
+  order-management-business-api:
+    build:
+      context: .
+      dockerfile: src/Read/BusinessApiService/Dockerfile
+    image: order-management/business-api:latest
+    container_name: order-management-business-api
+    restart: unless-stopped
+    ports:
+      - "5010:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerLocal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "${SERVICE_REGISTRATIONS_PATH:-./config/ServiceRegistrations.example.json}:/app/Settings/ServiceRegistrations/ServiceRegistrations.json:ro"
+
+  order-management-saga-worker:
+    build:
+      context: .
+      dockerfile: src/Saga/SagaWorker/Dockerfile
+    image: order-management/saga-worker:latest
+    container_name: order-management-saga-worker
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerLocal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "${SERVICE_REGISTRATIONS_PATH:-./config/ServiceRegistrations.example.json}:/app/Settings/ServiceRegistrations/ServiceRegistrations.json:ro"
